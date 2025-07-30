@@ -40,6 +40,7 @@ header {
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
+  z-index: 1001;
 }
 
 /* Navegación */
@@ -90,18 +91,24 @@ form label {
   margin: 10px 0;
 }
 
-/* Adaptabilidad móvil */
+/* Adaptabilidad móvil con menú lateral */
 @media (max-width: 768px) {
   .navbar {
     display: none;
     flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%;
+    height: 100%;
+    width: 250px;
     background-color: #003b8f;
-    padding: 10px 20px;
+    padding-top: 60px;
+    z-index: 1000;
+  }
+
+  .navbar a {
+    padding: 15px 20px;
+    border-bottom: 1px solid #0057B7;
   }
 
   .menu-toggle {
