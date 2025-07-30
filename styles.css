@@ -51,12 +51,13 @@ header {
   padding: 10px 20px;
   justify-content: center;
   flex-wrap: wrap;
+  transition: transform 0.3s ease;
 }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+/* Mostrar menú móvil */
+.navbar.show {
+  display: flex !important;
+  animation: slideIn 0.3s forwards;
 }
 
 /* Tarjetas principales */
@@ -104,6 +105,11 @@ form label {
     background-color: #003b8f;
     padding-top: 60px;
     z-index: 1000;
+    transform: translateX(-250px);
+  }
+
+  .navbar.show {
+    transform: translateX(0);
   }
 
   .navbar a {
@@ -124,33 +130,9 @@ form label {
     height: 100px;
   }
 }
+
 /* Animaciones para mostrar/ocultar menú */
 @keyframes slideIn {
   from { transform: translateX(-250px); }
   to { transform: translateX(0); }
 }
-
-@keyframes slideOut {
-  from { transform: translateX(0); }
-  to { transform: translateX(-250px); }
-}
-
-/* JavaScript en línea para cerrar automáticamente el menú */
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggle = document.querySelector('.menu-toggle');
-    const navbar = document.querySelector('.navbar');
-
-    toggle.addEventListener('click', () => {
-      navbar.classList.toggle('show');
-    });
-
-    // Cerrar automáticamente al hacer clic en un enlace
-    const links = navbar.querySelectorAll('a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        navbar.classList.remove('show');
-      });
-    });
-  });
-</script>

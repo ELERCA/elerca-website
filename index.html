@@ -135,8 +135,6 @@
     <div class="logo-container">
       <img src="logo-elerca.png" alt="Logo Elerca">
       <div class="logo-text">
-        <h1>Elerca</h1>
-        <p>Eficiencia Energética</p>
       </div>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -183,5 +181,25 @@
       document.getElementById('navbar').classList.toggle('active');
     }
   </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.menu-toggle');
+    const navbar = document.querySelector('.navbar');
+
+    toggle.addEventListener('click', () => {
+      navbar.classList.toggle('show');
+    });
+
+    // Cerrar automáticamente al hacer clic en un enlace
+    const links = navbar.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('show');
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
