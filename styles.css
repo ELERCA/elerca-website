@@ -5,6 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elerca - Eficiencia Energética</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .navbar {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #0057B7;
+      width: 200px;
+      padding: 10px;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .menu-toggle {
+      display: block;
+      background-color: #0057B7;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      .navbar {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        background: none;
+        padding: 0;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -13,9 +56,10 @@
       <h1>Elerca</h1>
       <p>Eficiencia Energética</p>
     </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menú</button>
   </header>
 
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <a href="index.html">Inicio</a>
     <a href="servicios.html">Servicios</a>
     <a href="proyectos.html">Proyectos</a>
@@ -42,5 +86,16 @@
   <footer>
     <p>&copy; 2025 Elerca. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById('navbar');
+      if (navbar.style.display === 'flex') {
+        navbar.style.display = 'none';
+      } else {
+        navbar.style.display = 'flex';
+      }
+    }
+  </script>
 </body>
 </html>
