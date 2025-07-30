@@ -1,42 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elerca - Eficiencia Energética</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <img src="logo-elerca.png" alt="Logo Elerca" class="logo">
+    <div class="header-text">
+      <h1>Elerca</h1>
+      <p>Eficiencia Energética</p>
+    </div>
+  </header>
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-header {
-    background: #0057B7;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-}
-.logo {
-    height: 250px; /* puedes ajustar esto a 150px, 180px, etc. */
-    width: auto;   /* esto hace que el ancho se ajuste automáticamente */
-    margin-right: 20px;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-main {
-    padding: 20px;
-}
-footer {
-    background: #222;
-    color: #ccc;
-    text-align: center;
-    padding: 10px;
-}
-form label {
-    display: block;
-    margin: 10px 0;
-}
+  <nav class="navbar">
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="proyectos.html">Proyectos</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <main>
+    <section class="card-container">
+      <div class="card">
+        <h2>Soluciones Solares</h2>
+        <p>Diseñamos e instalamos sistemas fotovoltaicos eficientes para hogares y negocios.</p>
+      </div>
+      <div class="card">
+        <h2>Ahorro Energético</h2>
+        <p>Identificamos oportunidades de eficiencia para reducir tu consumo eléctrico.</p>
+      </div>
+      <div class="card">
+        <h2>Instalaciones Eléctricas</h2>
+        <p>Proyectos seguros y normados en baja y media tensión.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Elerca. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
