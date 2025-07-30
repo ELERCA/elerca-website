@@ -119,5 +119,31 @@
     <footer>
         <p>&copy; 2025 Elerca - Eficiencia Energética. Todos los derechos reservados.</p>
     </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navbar').classList.toggle('active');
+    }
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.menu-toggle');
+    const navbar = document.querySelector('.navbar');
+
+    toggle.addEventListener('click', () => {
+      navbar.classList.toggle('show');
+    });
+
+    // Cerrar automáticamente al hacer clic en un enlace
+    const links = navbar.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('show');
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
