@@ -13,7 +13,7 @@ header {
     padding: 10px 20px;
 }
 .logo {
-    height: 120px; /* puedes ajustar esto a 150px, 180px, etc. */
+    height: 250px; /* puedes ajustar esto a 150px, 180px, etc. */
     width: auto;   /* esto hace que el ancho se ajuste automáticamente */
     margin-right: 20px;
 }
