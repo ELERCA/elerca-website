@@ -1,101 +1,119 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elerca - Eficiencia Energética</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .navbar {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background-color: #0057B7;
-      width: 200px;
-      padding: 10px;
-    }
+/* Reset general */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-    .navbar a {
-      color: white;
-      padding: 10px;
-      text-decoration: none;
-    }
+/* Encabezado */
+header {
+  background: #0057B7;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  position: relative;
+}
 
-    .menu-toggle {
-      display: block;
-      background-color: #0057B7;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      font-size: 18px;
-      cursor: pointer;
-    }
+.logo {
+  height: 120px;
+  width: auto;
+  margin-right: 20px;
+}
 
-    @media (min-width: 768px) {
-      .navbar {
-        display: flex !important;
-        position: static;
-        flex-direction: row;
-        width: auto;
-        background: none;
-        padding: 0;
-      }
+.header-text h1 {
+  margin: 0;
+  font-size: 2rem;
+}
 
-      .menu-toggle {
-        display: none;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header class="header">
-    <img src="logo-elerca.png" alt="Logo Elerca" class="logo">
-    <div class="header-text">
-      <h1>Elerca</h1>
-      <p>Eficiencia Energética</p>
-    </div>
-    <button class="menu-toggle" onclick="toggleMenu()">☰ Menú</button>
-  </header>
+.header-text p {
+  margin: 0;
+  font-size: 1rem;
+}
 
-  <nav class="navbar" id="navbar">
-    <a href="index.html">Inicio</a>
-    <a href="servicios.html">Servicios</a>
-    <a href="proyectos.html">Proyectos</a>
-    <a href="contacto.html">Contacto</a>
-  </nav>
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
 
-  <main>
-    <section class="card-container">
-      <div class="card">
-        <h2>Soluciones Solares</h2>
-        <p>Diseñamos e instalamos sistemas fotovoltaicos eficientes para hogares y negocios.</p>
-      </div>
-      <div class="card">
-        <h2>Ahorro Energético</h2>
-        <p>Identificamos oportunidades de eficiencia para reducir tu consumo eléctrico.</p>
-      </div>
-      <div class="card">
-        <h2>Instalaciones Eléctricas</h2>
-        <p>Proyectos seguros y normados en baja y media tensión.</p>
-      </div>
-    </section>
-  </main>
+/* Navegación */
+.navbar {
+  display: flex;
+  gap: 15px;
+  background-color: #003b8f;
+  padding: 10px 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-  <footer>
-    <p>&copy; 2025 Elerca. Todos los derechos reservados.</p>
-  </footer>
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-  <script>
-    function toggleMenu() {
-      const navbar = document.getElementById('navbar');
-      if (navbar.style.display === 'flex') {
-        navbar.style.display = 'none';
-      } else {
-        navbar.style.display = 'flex';
-      }
-    }
-  </script>
-</body>
-</html>
+/* Tarjetas principales */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #f0f0f0;
+  padding: 20px;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Pie de página */
+footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Formulario */
+form label {
+  display: block;
+  margin: 10px 0;
+}
+
+/* Adaptabilidad móvil */
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #003b8f;
+    padding: 10px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-text {
+    flex: 1 0 100%;
+    margin-top: 10px;
+  }
+
+  .logo {
+    height: 100px;
+  }
+}
