@@ -124,3 +124,33 @@ form label {
     height: 100px;
   }
 }
+/* Animaciones para mostrar/ocultar menú */
+@keyframes slideIn {
+  from { transform: translateX(-250px); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+  from { transform: translateX(0); }
+  to { transform: translateX(-250px); }
+}
+
+/* JavaScript en línea para cerrar automáticamente el menú */
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.menu-toggle');
+    const navbar = document.querySelector('.navbar');
+
+    toggle.addEventListener('click', () => {
+      navbar.classList.toggle('show');
+    });
+
+    // Cerrar automáticamente al hacer clic en un enlace
+    const links = navbar.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('show');
+      });
+    });
+  });
+</script>
